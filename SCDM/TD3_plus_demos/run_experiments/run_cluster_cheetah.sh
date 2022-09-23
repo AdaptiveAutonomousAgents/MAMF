@@ -1,13 +1,9 @@
 #!/bin/bash
 
-cd /bigdata/users/jhu/SCDM/SCDM/TD3_plus_demos/
-source /bigdata/users/jhu/anaconda3/bin/activate
-conda activate SCDM
-
 env_name="HalfCheetah-v3"
 
-tag=TD3_ours_transfer_all_start_same
-seed=3
+tag=test
+seed=1
 
 demo_tag=""
 

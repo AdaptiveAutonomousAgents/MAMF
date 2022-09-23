@@ -1,6 +1,6 @@
 *__pycache__*
 *.egg-info
-.idea
+.idea/
 
 #results from DPL
 SCDM/DPL/demonstrations/

@@ -1,12 +1,8 @@
 #!/bin/bash
 
-cd /bigdata/users/jhu/SCDM/SCDM/TD3_plus_demos/
-source /bigdata/users/jhu/anaconda3/bin/activate
-conda activate SCDM
-
 env_name="Swimmer-v3"
-tag=SAC_ours_c_60
-seed=3
+tag=test
+seed=1
 
 demo_tag=""
 

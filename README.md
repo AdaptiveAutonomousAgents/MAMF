@@ -1,6 +1,10 @@
-# Solving Complex Dexterous Manipulation Tasks with Trajectory Optimisation and Reinforcement Learning
+# Solving Complex Dexterous Manipulation Tasks with Model-Assisted Model-Free Reinforcement Learning
 
-This repository is based on the code for ICML 2021 paper: <a href="https://arxiv.org/abs/2009.05104">Solving Complex Dexterous Manipulation Tasks with Trajectory Optimisation and Reinforcement Learning</a> (link to arXiv version). Videos showcasing the obtained results can be found on the <a href="https://dexterous-manipulation.github.io">main project page</a>.
+This repository is the code for CoRL 2022 paper: <a href="https://openreview.net/forum?id=7CrXRhmzVVR&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3Drobot-learning.org%2FCoRL%2F2022%2FConference%2FAuthors%23your-submissions)">Solving Complex Dexterous Manipulation Tasks with Model-Assisted Model-Free Reinforcement Learning</a> (link to openreview). 
+
+And this is based on the code for ICML 2021 paper: <a href="https://arxiv.org/abs/2009.05104">Solving Complex Dexterous Manipulation Tasks with Trajectory Optimisation and Reinforcement Learning</a> (link to arXiv version). 
+Before you start, you can first check the original repository.
+
 Requirements:
 * Mujoco-py
 * Pytorch
@@ -10,10 +14,7 @@ Requirements:
 
 Install with ```pip install -e .```
 
-TOPDM contains the code for the trajectory optimisation algorithm. See ```SCDM/TOPDM/example_experiments.sh``` for examples of how to run this. Note that this cleaned version of the code seems to be running more slowly than an earlier version - currently looking into this.
+Our work is maly defined in the SCDM/TD3_plus_demos/.
+We learn a dynamics model during the training of a reinforcement learning agent and use the dynamics model to generate imaginary transitions to help learn the critic.
 
-TD3_plus_demos contains the code for combining demonstrations with reinforcement learning for the PenSpin task. See ```SCDM/TD3_plus_demos/run_experiment.sh``` to run.
-
-We also provide prerun trajectories for all of the environments in ```SCDM/TOPDM/prerun_trajectories```, as well as a file to render these (```SCDM/TOPDM/prerun_trajectories/render_demonstrations.py```)
-
-We later on also added a version of TOPDM applied to the Humanoid-v3 environment in OpenAI's gym. This is contained in SCDM/TOPDM/humanoid_experiments.
+To run the experiments, please check the files under SCDM/TD3_plus_demos/run_experiments/

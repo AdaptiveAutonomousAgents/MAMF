@@ -119,38 +119,6 @@ class SAC(object):
 		self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=3e-4)
 
 		self.critic = Critic(state_dim, action_dim).to(device)
-		# if add_artificial_transitions_type == 'ours':
-		# 	# initialize with a high Q value to encourage exploration
-		# 	if env_name == 'PenSpin-v0':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 50)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 50)
-		# 	elif env_name == 'EggCatchOverarm-v0':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 10)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 10)
-		# 	elif env_name == 'EggCatchUnderarm-v0':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 10)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 10)
-		# 	elif env_name == 'Walker2d-v3':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 100)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 100)
-		# 	elif env_name == 'HalfCheetah-v3':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 50)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 50)
-		# 	elif env_name == 'Swimmer-v3':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 30)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 30)
-		# 	elif env_name == 'Hopper-v3':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 50)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 50)
-		# 	elif env_name == 'Ant-v3':
-		# 		nn.init.constant_(self.critic.l3.bias.data, 100)
-		# 		nn.init.constant_(self.critic.l6.bias.data, 100)
-		# 	elif env_name == 'Pusher-v2':
-		# 		nn.init.constant_(self.critic.l3.bias.data, -10)
-		# 		nn.init.constant_(self.critic.l6.bias.data, -10)
-		# 	elif env_name == 'Reacher-v2':
-		# 		nn.init.constant_(self.critic.l3.bias.data, -2)
-		# 		nn.init.constant_(self.critic.l6.bias.data, -2)
 		self.critic_target = copy.deepcopy(self.critic)
 		self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=3e-4)
 
